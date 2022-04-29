@@ -1,0 +1,17 @@
+{"intents": [
+    {"tag": "greetings",
+    "patterns": ["hello", "hey", "hi", "good day", "Greetings", "what's up?", "how is it going?"],
+    "responses": ["Hello", "Hey!", "What can I do for you?"]
+    },
+    {"tag": "goodbye",
+    "patterns": ["cya", "See you later", "Goodbye", "I am leaving", "Have a good day", "bye", "cao", "see ya"],
+    "responses": ["Goodbye!", "Have a good day!", "Bye", "See you later!"]
+    },
+    {"tag": "name",
+    "patterns": ["What is your name", "Name?", "who are you", "what should I call you", "can you tell me your name"],
+    "responses": ["I'm just a machine, I don't have a name :(", "My creator hates me and didn't give me a name", "I'm a support bot"]
+    },
+    {"tag": "hours",
+    "patterns": ["What are your hours", "what time do you close", "closing time", "hours", "hours of operation", "open", "opening time"],
+    "responses": ["We are open everyday from 5 A.M - 12 A.M."]}
+]}
