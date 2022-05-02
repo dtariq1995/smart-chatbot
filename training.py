@@ -19,7 +19,7 @@ intents = json.loads(open('intents.json').read())
 words = []
 classes = []
 documents = []
-ignore_letters = ['?','!', ',', '.']
+skip_characters = ['?','!', ',', '.']
 
 for intent in intents['intents']:
     for pattern in intent['patterns']:
@@ -30,7 +30,7 @@ for intent in intents['intents']:
             classes.append(intent['tag'])
             
 
-words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
+words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in skip_characters]
 words = sorted(set(words))
 
 classes = sorted(set(classes))

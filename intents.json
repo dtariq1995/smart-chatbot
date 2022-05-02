@@ -1,6 +1,6 @@
 {"intents": [
     {"tag": "greetings",
-    "patterns": ["hello", "hey", "hi", "good day", "Greetings", "what's up?", "how is it going?"],
+    "patterns": ["hello", "hey", "hi", "Greetings", "what's up?", "Howdy", "Hello"],
     "responses": ["Hello", "Hey!", "What can I do for you?"]
     },
     {"tag": "goodbye",
@@ -13,5 +13,34 @@
     },
     {"tag": "hours",
     "patterns": ["What are your hours", "what time do you close", "closing time", "hours", "hours of operation", "open", "opening time"],
-    "responses": ["We are open everyday from 5 A.M - 12 A.M."]}
+    "responses": ["We are open everyday from 5 A.M - 12 A.M."]
+    },
+    {"tag": "payment",
+    "patterns": ["payment methods", "Can I use my visa", "Can I pay with discover", "Do you accept american express", "Do you accept check", "Do you take paypal", "how do I pay", "Do you take cash"],
+    "responses": ["We accept cash, check, paypal, and most major credit cards(amex, discover, visa)"]
+    },
+    {"tag": "robbery",
+    "patterns": ["this is a robbery", "give me all the money", "empty the register", "hands in the air", "fork it over", "give me all your money"],
+    "responses": ["*front-flip dropkicks you*", "I don't think so!", "Lol", "Not worth my life, here you go :)", "We don't have any cash on hand"]
+    },
+    {"tag": "howYou",
+    "patterns": ["how are you today", "how you been", "how do you feel"],
+    "responses": ["I'm good, how about you?", "I'm a machine, I have no emotions.", "Great!", "I was good till you walked in :D jk", "I suppose I'm still alive.", "How is it going"]
+    },
+    {"tag": "hate",
+    "patterns": ["I hate you", "you suck", "you're the worst", "you're a loser", "i dislike you"],
+    "responses": ["I hate you too", "I didn't even do anything :(", "What did I do?", "I have no feelings towards you as I am a bot"]
+    },
+    {"tag": "love",
+    "patterns": ["I love you", "you are the best", "I like you", "You're my favorite"],
+    "responses": ["I love you <3", "You're the best!", "You're my favorite!", "I have no feelings towards you as I am a bot"]
+},
+    {"tag": "products",
+    "patterns": ["Do you have snacks", "Do you have soda", "what products do you carry", "What do you sell", "do you sell chips", "i want candy"],
+    "responses": ["We carry all sorts of snacks!", "We have sodas, snacks, and candy.", "We have anything that you are looking for!"]
+
+    },
+    {"tag": "attacker",
+    "patterns": ["i'll shoot you", "i have a gun", "don't make me shoot you", "I have a knife", "I have a weapon", "There is a bomb strapped to my chest"],
+    "responses": ["*explodes you*", "I'm a robot, you can't hurt me lol", "I'm made of metal, good luck!", "If you shoot me, there will be a gas leak and everybody will die!", "I bet you won't do anything!"]}
 ]}
