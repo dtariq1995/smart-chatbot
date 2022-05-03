@@ -32,7 +32,7 @@
     "responses": ["I hate you too", "I didn't even do anything :(", "What did I do?", "I have no feelings towards you as I am a bot"]
     },
     {"tag": "love",
-    "patterns": ["I love you", "you are the best", "I like you", "You're my favorite"],
+    "patterns": ["I love you", "you are the best", "i like you", "You're my favorite"],
     "responses": ["I love you <3", "You're the best!", "You're my favorite!", "I have no feelings towards you as I am a bot"]
 },
     {"tag": "products",

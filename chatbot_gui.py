@@ -4,9 +4,9 @@ from chatbot import get_response, bot_name, predict_class
 import json
 intents = json.loads(open('intents.json').read())
 
-BG_GRAY = "#5e5e5e"
-BG_COLOR = "#2C3E50"
-TEXT_COLOR = "#EAECEE"
+gray = "#5e5e5e"
+navy = "#2C3E50"
+white = "#EAECEE"
 
 FONT = "Ubuntu 14"
 FONT_BOLD = "Ubuntu 13 bold"
@@ -23,19 +23,19 @@ class ChatApplication:
     def _setup_main_window(self):
         self.window.title("Chat with Botty")
         self.window.resizable(width=True, height=True)
-        self.window.configure(width=470, height=550, bg=BG_COLOR)
+        self.window.configure(width=470, height=550, bg=navy)
         
         # head label
-        head_label = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR,
+        head_label = Label(self.window, bg=navy, fg=white,
                            text="Welcome", font=FONT_BOLD, pady=10)
         head_label.place(relwidth=1)
         
         # tiny divider
-        line = Label(self.window, width=450, bg=BG_GRAY)
+        line = Label(self.window, width=450, bg=gray)
         line.place(relwidth=1, rely=0.07, relheight=0.012)
         
         # text widget
-        self.text_widget = Text(self.window, width=20, height=2, bg=BG_COLOR, fg=TEXT_COLOR,
+        self.text_widget = Text(self.window, width=20, height=2, bg=navy, fg=white,
                                 font=FONT, padx=5, pady=5)
         self.text_widget.place(relheight=0.745, relwidth=1, rely=0.08)
         self.text_widget.configure(cursor="arrow", state=DISABLED)
@@ -46,25 +46,25 @@ class ChatApplication:
         scrollbar.configure(command=self.text_widget.yview)
         
         # bottom label
-        bottom_label = Label(self.window, bg=BG_GRAY, height=80)
+        bottom_label = Label(self.window, bg=gray, height=80)
         bottom_label.place(relwidth=1, rely=0.825)
         
         # message entry box
-        self.msg_entry = Entry(bottom_label, bg="#2C3E50", fg=TEXT_COLOR, font=FONT)
+        self.msg_entry = Entry(bottom_label, bg=navy, fg=white, font=FONT)
         self.msg_entry.place(relwidth=0.74, relheight=0.06, rely=0.008, relx=0.011)
         self.msg_entry.focus()
         self.msg_entry.bind("<Return>", self._on_enter_pressed)
         
         # send button
-        send_button = Button(bottom_label, text="Send", font=FONT_BOLD, width=20, bg=BG_GRAY,
+        send_button = Button(bottom_label, text="Send", font=FONT_BOLD, width=20, bg=gray,
                              command=lambda: self._on_enter_pressed(None))
         send_button.place(relx=0.77, rely=0.008, relheight=0.06, relwidth=0.22)
      
-    def _on_enter_pressed(self, event):
+    def _on_enter_pressed(self, event):   # get user input
         msg = self.msg_entry.get()
         self._insert_message(msg, "You")
         
-    def _insert_message(self, msg, sender):
+    def _insert_message(self, msg, sender):   # insert user input to chatbot
         if not msg:
             return
         
@@ -74,7 +74,7 @@ class ChatApplication:
         self.text_widget.insert(END, msg1)
         self.text_widget.configure(state=DISABLED)
         
-        msg2 = f"{bot_name}: {get_response(predict_class(msg),intents)}\n\n"
+        msg2 = f"{bot_name}: {get_response(predict_class(msg),intents)}\n\n"   # call get response function to get response from bot after user presses enter
         self.text_widget.configure(state=NORMAL)
         self.text_widget.insert(END, msg2)
         self.text_widget.configure(state=DISABLED)
